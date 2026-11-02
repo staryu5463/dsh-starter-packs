@@ -1,0 +1,64 @@
+{
+  "name": "dsh-starter-packs",
+  "version": "0.1.0",
+  "description": "Starter packs for DeepSeek Harness: install a tested set of community plugins in one click, from a 整合包 tab on the Plugins page.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "starter-pack",
+    "bundle",
+    "整合包"
+  ],
+  "license": "MIT",
+  "author": "staryu5463",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/staryu5463/dsh-starter-packs.git"
+  },
+  "homepage": "https://github.com/staryu5463/dsh-starter-packs",
+  "bugs": {
+    "url": "https://github.com/staryu5463/dsh-starter-packs/issues"
+  },
+  "type": "module",
+  "icon": "icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "packs/*.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22",
+    "dsh": ">=0.2.1-alpha.4"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/build.mjs --check && node scripts/verify-packs.mjs --static",
+    "verify": "node scripts/verify-packs.mjs",
+    "prepublishOnly": "node scripts/build.mjs --check && node scripts/verify-packs.mjs --static"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-plugin-manager"
+      ]
+    }
+  }
+}

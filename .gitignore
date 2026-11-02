@@ -1,0 +1,4 @@
+node_modules/
+.scratch-home/
+.phase0/
+*.tgz

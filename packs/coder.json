@@ -1,0 +1,19 @@
+{
+  "id": "coder",
+  "order": 2,
+  "title": { "zh": "编程开发", "en": "Coding" },
+  "description": {
+    "zh": "写代码时常用的一组：子代理代码审查、MCP 连接管理、仓库架构图，外加可选的危险命令护栏。",
+    "en": "For day-to-day coding: sub-agent code review, MCP connection management, repository architecture diagrams, plus an optional destructive-command guard."
+  },
+  "plugins": [
+    { "npm": "@michengai/dsh-code-review", "version": "1.0.5",
+      "why": { "zh": "/review 用独立子代理审查改动", "en": "/review runs an independent sub-agent over your changes" } },
+    { "npm": "dsh-mcp-connector", "version": "0.2.84",
+      "why": { "zh": "可视化管理 MCP 服务器连接", "en": "Manage MCP server connections visually" } },
+    { "npm": "@tt-a1i/archify-dsh", "version": "1.0.0",
+      "why": { "zh": "从仓库生成可交互的架构图、时序图", "en": "Generate interactive architecture and sequence diagrams from a repo" } },
+    { "npm": "cc-safety-net", "version": "2.7.0", "optional": true,
+      "why": { "zh": "在执行前拦截 rm -rf、git reset --hard 等破坏性命令", "en": "Blocks destructive commands such as rm -rf and git reset --hard before they run" } }
+  ]
+}

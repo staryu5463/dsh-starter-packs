@@ -1,0 +1,17 @@
+{
+  "id": "web",
+  "order": 3,
+  "title": { "zh": "联网与浏览器", "en": "Web & Browser" },
+  "description": {
+    "zh": "让 Agent 能搜索网页、驱动真实浏览器，并让纯文本模型看懂截图。这一组会给模型增加较多工具定义，建议按需安装。",
+    "en": "Lets the agent search the web, drive a real browser, and read screenshots with a text-only model. Adds many tool definitions to the model's context, so install it when you need it."
+  },
+  "plugins": [
+    { "npm": "@liustack/modsearch", "version": "5.10.11",
+      "why": { "zh": "联网搜索网页与 X，返回结构化结果", "en": "Web and X search with structured results" } },
+    { "npm": "dsh-ego-browser", "version": "0.9.7",
+      "why": { "zh": "用结构化工具驱动真实 Chrome", "en": "Drive real Chrome with structured tools" } },
+    { "npm": "@liustack/modlens", "version": "3.27.2",
+      "why": { "zh": "给纯文本模型补上看图能力（OCR、版面）", "en": "Gives text-only models vision: OCR and layout" } }
+  ]
+}

@@ -1,0 +1,5 @@
+# Bundle patch layer: one row loads the (empty) host half; the dsh.client
+# declaration makes the web app load ./client, which adds the 整合包 tab.
+- insert:
+    - id: dsh-starter-packs
+      name: dsh-starter-packs
